@@ -1,29 +1,45 @@
-/* Custom Stacking and Overlap Properties matching the React build layouts */
-.card-overlay-frame,
-.biography-main-card {
-    z-index: 10 !important;
-    position: relative !important;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+/* Optimized Accordion Toggles matching ProductPage.tsx details logic */
+.product-tabs-accordion-wrapper details {
+    border-top: 1px solid var(--wp--preset--color--contrast, #e5e7eb);
+    padding: 1.25rem 0;
+    transition: all 0.2s ease-in-out;
 }
 
-/* Ensure Portrait column image scales exactly like an object-cover flex component */
-.portrait-media-column img,
-.portrait-media-column figure {
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 480px;
-    object-fit: cover !important;
+.product-tabs-accordion-wrapper details:last-child {
+    border-bottom: 1px solid var(--wp--preset--color--contrast, #e5e7eb);
 }
 
-/* Structural Styles for Torn Paper Sections */
-.torn-paper-container img {
-    width: 100% !important;
-    height: auto !important;
-    display: block;
+.product-tabs-accordion-wrapper details summary {
+    font-family: var(--wp--preset--typography--font-family--heading, serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--wp--preset--color--contrast, #111);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Navigation spacing overrides */
-header.wp-block-group {
-    max-width: 100% !important;
-    box-sizing: border-box;
+/* Add custom stylized chevron indicators natively using pseudo elements */
+.product-tabs-accordion-wrapper details summary::after {
+    content: "＋";
+    font-size: 1rem;
+    font-weight: normal;
+    transition: transform 0.2s ease;
+}
+
+.product-tabs-accordion-wrapper details[open] summary::after {
+    content: "－";
+}
+
+/* Styled Blockquotes inside historical entry logs matching Article views */
+.art-history-manuscript-entry blockquote {
+    font-family: var(--wp--preset--typography--font-family--heading, serif);
+    font-style: italic;
+    font-size: 1.35rem;
+    border-left: 3px solid var(--wp--preset--color--primary, #51b9f4);
+    padding-left: 1.5rem;
+    margin: 2.5rem 0;
+    color: var(--wp--preset--color--contrast, #333);
 }
